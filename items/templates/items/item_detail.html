@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+
+
+{% block content %}
+
+
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- List of Items -->
+        <div class="row">
+            <div class="col-md-8">
+
+
+
+<h1> ITEM DETAILS </h1>
+<p>Title : {{item.title}}</p>
+<p>Type : {{item.type}}</p>
+<p>Posted By : {{item.by}}</p>
+<p>Score : {{item.score}}</p>
+<p>Time : {{item.item_creator}}</p>
+<p>Url : {{item.url}}</p>
+
+
+
+<h1>COMMENTS</h1>
+
+                {% for comment in comments %}
+                <div class="card mb-3">
+                    <div class="card-body">
+    <h3 class="card-title">{{comment.text}}</h3>
+                        <p class="card-text">Comment by :{{comment.item_creator}}</p>
+                        <p class="card-text">Number of Votes: {{item.score}}</p>
+                        <p class="card-text">Time: {{item.date_created}}</p>
+                    </div>
+                </div>
+                {% empty %}
+                    <h1>No Comment Currently</h1>
+                {% endfor %}
+
+
+{% endblock content %}

@@ -1,0 +1,17 @@
+celery==5.3.1
+Django==4.2
+gunicorn==21.2.0
+psycopg2-binary==2.9.6
+python-decouple==3.8
+redis==4.6.0
+celery==5.3.1
+easy-thumbnails==2.8.5
+pillow==10.0.0
+django-allauth==0.54.0
+requests==2.31.0
+django-crispy-forms==2.0
+crispy-bootstrap5==0.7
+django-taggit==4.0.0
+djangorestframework
+django-cors-headers
+drf-yasg

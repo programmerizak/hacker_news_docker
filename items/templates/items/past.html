@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+    <!-- Main Content -->
+    <div class="container mt-4">
+        <!-- List of Items -->
+        <div class="row">
+            <div class="col-md-8">
+
+
+                {% for item in items %}
+                <div class="card mb-3">
+                    <div class="card-body">
+<a href="{% url 'items:item_detail' item.id %}">    <h3 class="card-title">{{item.title}}</h3> </a>
+                        <p class="card-text">Number of Comments: {{item.no_comments}}</p>
+                        <p class="card-text">Number of Votes: {{item.score}}</p>
+                        <p class="card-text">Date: {{item.date_created}}</p>
+                    </div>
+                </div>
+                {% empty %}
+                    <h1>No Story Currently</h1>
+                {% endfor %}
+
+
+                <!-- ... Repeat for more items ... -->
+
+
+
+{% endblock content %}

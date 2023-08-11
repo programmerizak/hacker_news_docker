@@ -1,0 +1,26 @@
+{% load search_tags %}
+
+
+<div class="col-md-4 d-md-block d-none">
+    <h2 class="mb-4">Menu</h2>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="{% url 'items:home' %}">Home</a></li>
+        <li class="list-group-item"><a href="{% url 'items:past' %}">Past</a></li>
+        <li class="list-group-item"><a href="{% url 'items:comments' %}">Comments</a></li>
+        <li class="list-group-item"><a href="{% url 'items:ask' %}">Ask</a></li>
+        <li class="list-group-item"><a href="{% url 'items:show' %}">Show</a></li>
+        <li class="list-group-item"><a href="{% url 'items:jobs' %}">Jobs</a></li>
+        <li class="list-group-item"><a href="{% url 'items:home' %}">Home</a></li>
+
+        {% if user.is_authenticated %}
+        <li class="list-group-item"><a href="{% url 'items:submit' %}">Submit</a></li>
+        <li class="list-group-item"><a href="{% url 'items:threads' %}">Threads</a></li>
+        <li class="list-group-item"><a href="{% url 'account_logout' %}">logout</a></li>
+        {% else %}
+            
+        <li class="list-group-item"><a href="{% url 'account_login' %}">login</a></li>
+        <li class="list-group-item"><a href="{% url 'account_signup' %}">Sign Up</a></li>
+        {% endif %}
+        {% search_form %}
+    </ul>
+</div>
